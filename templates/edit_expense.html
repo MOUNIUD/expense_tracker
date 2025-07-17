@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Edit Expense</h3>
+<form method="POST">
+    <div class="mb-3">
+        <label>Date</label>
+        <input type="date" name="date" value="{{ expense[1] }}" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Category</label>
+        <input type="text" name="category" value="{{ expense[2] }}" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Amount</label>
+        <input type="number" name="amount" value="{{ expense[3] }}" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Description</label>
+        <textarea name="description" class="form-control">{{ expense[4] }}</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+{% endblock %}

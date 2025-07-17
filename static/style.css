@@ -1,0 +1,76 @@
+/* Background Gradient for Whole Page */
+body {
+  background: linear-gradient(to right, #74ebd5, #acb6e5);
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Form Box Styling */
+.form-box {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  border: 2px solid #0d6efd;
+}
+
+/* Button Animation */
+.btn-animate {
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-animate:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #0d6efd;
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: #ffffffcc;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .nav-link {
+  font-weight: 600;
+  color: #000 !important;
+}
+
+.navbar .nav-link:hover {
+  color: #0d6efd !important;
+}
+
+/* Center Content Blocks */
+.page-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+/* floting emojies  */
+
+@keyframes float {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.floating-money {
+  position: fixed;
+  top: -50px;
+  left: calc(100% * var(--i));
+  font-size: 30px;
+  animation: float 10s linear infinite;
+  animation-delay: calc(1s * var(--i));
+  z-index: 0;
+  pointer-events: none;
+}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3 class="mt-4 text-center">Monthly Expense Summary</h3>
+
+<div style="max-width: 600px; margin: auto;">
+    <canvas id="monthlyChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const ctx = document.getElementById('monthlyChart').getContext('2d');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: {{ months | tojson | safe }},
+            datasets: [{
+                label: 'Total Spent',
+                data: {{ totals | tojson | safe }},
+                backgroundColor: '#36A2EB',
+                borderRadius: 8
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: false }
+            },
+            scales: {
+                y: { beginAtZero: true }
+            }
+        }
+    });
+</script>
+{% endblock %}
+

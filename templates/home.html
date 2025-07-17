@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+    body {
+        background: linear-gradient(to right, #e0eafc, #cfdef3);
+    }
+
+    .center-box {
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .btn-group {
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    h1 {
+        font-weight: bold;
+        color: #333;
+    }
+
+    .btn-lg {
+        padding: 15px 30px;
+        font-size: 18px;
+        border-radius: 12px;
+    }
+</style>
+
+<div class="center-box">
+    <h1>💸 Expense Tracker</h1>
+    <p class="lead">Track, manage & visualize your spending like a pro! 🚀</p>
+
+    <div class="btn-group d-flex flex-wrap justify-content-center">
+        <a href="/add" class="btn btn-success btn-lg">➕ Add Expense</a>
+        <a href="/view" class="btn btn-primary btn-lg">📃 View Expenses</a>
+        <a href="/monthly" class="btn btn-info btn-lg">📊 Monthly Chart</a>
+        <a href="/summary" class="btn btn-warning btn-lg">🧁 Category Chart</a>
+    </div>
+</div>
+
+{% endblock %}
+
