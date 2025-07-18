@@ -136,6 +136,7 @@ def clear_all():
 def test():
     return render_template('test_summary.html')
 
+init_db()  # Initialize DB before app runs, both locally and on Render
+
 if __name__ == '__main__':
-    init_db()
     app.run(debug=True)
